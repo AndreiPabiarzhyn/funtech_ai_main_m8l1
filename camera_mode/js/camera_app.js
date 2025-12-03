@@ -208,3 +208,13 @@ btnRestart.onclick = () => {
 
   document.getElementById("trainButtons").hidden = false;
 };
+
+const btnBackToMode1 = document.getElementById("btnBackToMode1");
+
+btnBackToMode1.onclick = () => {
+  // Полный сброс прогресса
+  localStorage.removeItem("stage1_completed");
+
+  // Переход в первый режим
+  window.location.href = "../index.html";
+};
