@@ -1,0 +1,312 @@
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #e6f8ff 0, #f9f5ff 40%, #f5f5ff 100%);
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  padding: 20px;
+  color: #1f1333;
+}
+
+.app {
+  max-width: 960px;
+  width: 100%;
+  background: #ffffffcc;
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 20px 24px 28px;
+  box-shadow: 0 18px 40px rgba(37, 9, 80, 0.18);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.header h1 {
+  margin: 0 0 6px;
+  font-size: 28px;
+  color: #3b1f63;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 14px;
+  color: #5f4a89;
+}
+
+.fish-text {
+  color: #00b3c9;
+  font-weight: 600;
+}
+
+.trash-text {
+  color: #e0529c;
+  font-weight: 600;
+}
+
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  gap: 8px;
+}
+
+.status-tag {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #7c3aed, #ec4899);
+  color: #fff;
+  font-size: 12px;
+}
+
+.progress {
+  font-size: 13px;
+  color: #4b3b72;
+}
+
+.lamp-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.lamp-label {
+  font-size: 13px;
+  color: #4b3b72;
+}
+
+.lamp-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lamp {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #cbd5f5;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.lamp--fish {
+  background: #22c55e;
+  box-shadow: 0 0 12px rgba(34, 197, 94, 0.7);
+  transform: scale(1.1);
+}
+
+.lamp--trash {
+  background: #ef4444;
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.7);
+  transform: scale(1.1);
+}
+
+.lamp-text {
+  font-size: 13px;
+  color: #4b3b72;
+}
+
+.sea-area {
+  margin: 8px 0 14px;
+}
+
+.sea-frame {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  aspect-ratio: 4 / 3;
+  border-radius: 18px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #a5f3fc 0, #0ea5e9 45%, #164e63 100%);
+  box-shadow: inset 0 0 20px rgba(12, 10, 54, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sea-image {
+  max-width: 75%;
+  max-height: 75%;
+  object-fit: contain;
+  position: relative;
+}
+
+/* Анимации */
+.sea-image.swim {
+  animation: swim 0.9s ease-out forwards;
+}
+
+@keyframes swim {
+  0% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(150px) scale(0.9);
+    opacity: 0;
+  }
+}
+
+.sea-image.fall {
+  animation: fall 0.9s ease-in forwards;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(140px) rotate(18deg);
+    opacity: 0;
+  }
+}
+
+.buttons-section {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.instruction {
+  font-size: 14px;
+  color: #4b3b72;
+  margin: 0 0 8px;
+}
+
+.buttons-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  border: none;
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.1s ease;
+  box-shadow: 0 3px 0 rgba(76, 29, 149, 0.4);
+  color: #fff;
+  font-weight: 500;
+}
+
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 0 rgba(76, 29, 149, 0.4);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+  box-shadow: none;
+}
+
+.btn-fish {
+  background: linear-gradient(135deg, #06b6d4, #14b8a6);
+}
+
+.btn-trash {
+  background: linear-gradient(135deg, #ec4899, #f97316);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #7c3aed, #22c55e);
+}
+
+.btn-secondary {
+  background: #4b3b72;
+}
+
+.next-phase-section {
+  text-align: center;
+  margin: 16px 0 10px;
+}
+
+.summary-section {
+  margin-top: 16px;
+  padding-top: 10px;
+  border-top: 1px dashed #cbd5f5;
+}
+
+.summary-section h2 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  color: #3b1f63;
+}
+
+.summary-content {
+  font-size: 14px;
+  color: #4b3b72;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 640px) {
+  .app {
+    padding: 16px;
+  }
+
+  .sea-image {
+    max-width: 82%;
+    max-height: 82%;
+  }
+
+  .buttons-row {
+    flex-direction: column;
+  }
+}
+
+.center-lamp {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  width: 140px;
+  height: 140px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity .35s ease;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.center-lamp--fish {
+  background: radial-gradient(circle, #4fffa0, #00d46a);
+  box-shadow: 0 0 35px #00ff7a;
+}
+
+.center-lamp--trash {
+  background: radial-gradient(circle, #ff5a5a, #c70000);
+  box-shadow: 0 0 35px #ff1a1a;
+}
+
+/* плавные анимации */
+.sea-image.swim {
+  animation: swim 1.6s ease-out forwards;
+}
+@keyframes swim {
+  0% { transform: translateX(0) scale(1); opacity: 1; }
+  100% { transform: translateX(200px) scale(0.8); opacity: 0; }
+}
+
+.sea-image.fall {
+  animation: fall 1.6s ease-in forwards;
+}
+@keyframes fall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(220px) rotate(15deg); opacity: 0; }
+}
+

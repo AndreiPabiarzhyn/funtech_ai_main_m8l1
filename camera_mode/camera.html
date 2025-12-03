@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Умное море — камера режим</title>
+    <link rel="stylesheet" href="camera.css" />
+  </head>
+
+  <body>
+    <script>
+      // Доступ только после этапа 1
+      if (localStorage.getItem("stage1_completed") !== "yes") {
+        window.location.href = "../index.html";
+      }
+    </script>
+
+    <div class="app">
+      <header class="header">
+        <h1>Умное море — Камера 🎥</h1>
+        <p class="subtitle">
+          Покажи <span class="fish-text">смешное лицо</span> или
+          <span class="trash-text">жесты руками</span>. Обучи ИИ!
+        </p>
+      </header>
+
+      <main>
+
+        <!-- Центральная лампа -->
+        <div id="centerLamp" class="center-lamp"></div>
+
+        <!-- Камера -->
+        <section class="camera-area">
+          <video id="video" autoplay playsinline></video>
+        </section>
+
+        <!-- БЛОК ОБУЧЕНИЯ -->
+        <section id="trainButtons" class="buttons-section">
+          <p class="instruction">Покажи в камеру и нажми кнопку:</p>
+
+          <div class="buttons-row">
+            <button id="btnFace" class="btn btn-fish">
+              😜 Смешное лицо <span id="faceCount">(0/10)</span>
+            </button>
+
+            <button id="btnHands" class="btn btn-trash">
+              ✋ Жесты руками <span id="handsCount">(0/10)</span>
+            </button>
+          </div>
+
+          <button id="btnStartTest2" class="btn btn-primary next-btn" hidden>
+            Проверить себя 🚀
+          </button>
+        </section>
+
+        <!-- РЕЖИМ ПРОВЕРКИ (ручной) -->
+        <section id="testArea" class="test-area" hidden>
+          <h3 id="testCounter">Проверка 1 из 10</h3>
+
+          <div id="testMessage" class="test-message">
+            Я готов распознать!
+          </div>
+
+          <div class="buttons-row test-buttons">
+            <button id="btnRecognize" class="btn btn-primary">
+              Распознать
+            </button>
+
+            <button id="btnNext" class="btn btn-secondary" hidden>
+              Далее ➜
+            </button>
+          </div>
+        </section>
+
+        <!-- ИТОГИ -->
+        <section id="summary2" class="summary-section" hidden>
+          <h2>Итоги работы модели</h2>
+          <div id="summaryText2" class="summary-content"></div>
+
+          <button id="btnRestart2" class="btn btn-secondary">
+            Пройти режим камеры заново 🔁
+          </button>
+        </section>
+
+        <canvas id="calcCanvas2" width="64" height="64" hidden></canvas>
+
+      </main>
+    </div>
+
+    <script type="module" src="./js/camera_app.js"></script>
+  </body>
+</html>

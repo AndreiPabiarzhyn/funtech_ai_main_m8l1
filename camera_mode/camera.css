@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f6f3ff;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.app {
+  max-width: 900px;
+  width: 100%;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.header {
+  text-align: center;
+}
+
+.subtitle {
+  color: #5a4d85;
+}
+
+.camera-area {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+video {
+  width: 480px;
+  height: 360px;
+  border-radius: 12px;
+  background: black;
+  object-fit: cover;
+}
+
+.buttons-section {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.buttons-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 999px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-fish {
+  background: linear-gradient(135deg, #06b6d4, #14b8a6);
+}
+
+.btn-trash {
+  background: linear-gradient(135deg, #ec4899, #f97316);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #7c3aed, #22c55e);
+}
+
+.btn-secondary {
+  background: #4b3b72;
+}
+
+/* Лампа в центре */
+.center-lamp {
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  width: 180px;
+  height: 180px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity .3s ease;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.center-lamp--face {
+  background: radial-gradient(circle, #4fffa0, #00d46a);
+}
+
+.center-lamp--hands {
+  background: radial-gradient(circle, #ff6a6a, #c70000);
+}
+
+.summary-section {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.summary-content {
+  margin-bottom: 16px;
+  color: #513f7a;
+}
+
+.btn.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.flash {
+  animation: flashAnim 0.35s ease-out;
+}
+
+@keyframes flashAnim {
+  0% { filter: brightness(1); }
+  50% { filter: brightness(2); }
+  100% { filter: brightness(1); }
+}
+
+.test-message {
+  text-align: center;
+  font-size: 22px;
+  margin-top: 15px;
+  color: #4b3b72;
+}

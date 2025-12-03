@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Умное море — обучи ИИ отличать рыбу от мусора</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="app">
+      <header class="header">
+        <h1>Умное море 🌊</h1>
+        <p class="subtitle">
+          Помоги искусственному интеллекту отличать
+          <span class="fish-text">рыбку</span> от
+          <span class="trash-text">мусора</span>.
+        </p>
+      </header>
+
+      <main>
+
+        <!-- Статус -->
+        <section class="status-bar">
+          <div id="phaseText" class="status-tag">Этап 1: обучение</div>
+          <div class="progress">
+            <span id="progressText">Картинка 1 из 20</span>
+          </div>
+        </section>
+
+        <!-- ЦЕНТРАЛЬНАЯ ЛАМПА -->
+        <div id="centerLamp" class="center-lamp"></div>
+        <canvas id="calcCanvas" hidden></canvas>
+
+        <!-- Море с картинкой -->
+        <section class="sea-area">
+          <div class="sea-frame">
+            <img id="mainImage" class="sea-image" src="" alt="картинка" />
+          </div>
+        </section>
+
+        <!-- Кнопки обучения -->
+        <section id="trainButtons" class="buttons-section">
+          <p class="instruction" id="instructionText">
+            Посмотри на картинку и нажми, что это:
+          </p>
+          <div class="buttons-row">
+            <button id="btnFish" class="btn btn-fish">Это РЫБА 🐟</button>
+            <button id="btnTrash" class="btn btn-trash">Это МУСОР 🗑</button>
+          </div>
+        </section>
+
+        <!-- Итоговый экран -->
+        <section id="summary" class="summary-section" hidden>
+          <h2>Итоги работы модели</h2>
+          <div id="summaryText" class="summary-content"></div>
+
+          <button id="btnRestart" class="btn btn-secondary">
+            Начать заново
+          </button>
+
+          <button id="goToCameraBtn" class="btn btn-primary" hidden>
+            Перейти к режиму камеры 🎥
+          </button>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
